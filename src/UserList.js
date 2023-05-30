@@ -1,5 +1,5 @@
-import ListGroup from 'react-bootstrap/ListGroup';
-import {Card} from "react-bootstrap/Card";
+
+import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -9,14 +9,29 @@ const UserCard =(person) => {
 console.log('person',person)
 
   return (
-    <Card style={{ width: '18rem' }}>
-    <ListGroup variant="flush">
-      <ListGroup.Item>{person.name}</ListGroup.Item>
-      <ListGroup.Item>{person.username}</ListGroup.Item>
-      <ListGroup.Item>{person.email}</ListGroup.Item>
-    </ListGroup>
-  </Card>
-  );
-}
+    <Table striped bordered hover size="sm">
+      <thead>
+      <tr>
+          <th>Id: </th>
+          <th> {person.id}</th>
+          </tr>
+          <tr>
+          <th>Name: </th>
+          <th>{person.name}</th>
+          </tr>
+          
+          <tr>
+          <th>Username: </th>
+          <th>{person.username}</th>
+          </tr>
+        
+          <tr>
+          <th>Email: </th>
+          <th>{person.email}</th>
+          </tr>
+      </thead>
+     
+    </Table>
+)}
 
 export default UserCard;
